@@ -25,7 +25,7 @@ Write-up:
 
 2. Open linux distro, and
 'sudo apt install ncat'
-'nc time-capsule.b841e857a61a33e3.challenge.zone:1339'
+'nc time-capsule.b841e857a61a33e3.challenge.zone 1339'
 
 netcat is igenlijk een soort TCP-connectie zonder HTTP
 so there are 2 ways to listen to these CTF-things
