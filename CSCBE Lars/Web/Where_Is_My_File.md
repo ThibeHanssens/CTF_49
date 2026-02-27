@@ -19,7 +19,7 @@ Instance
 
 
 Write-up:
-1. Execute the js in a the console of the site
+1. Execute the js in a the console of the site this is a standard brute-force to find the url so the script checks all the found subdirs and for each subdir checks the other subdir until it finds the right txt and throws the flags
 
 ```js
 // Global variables shared across all crawlers
