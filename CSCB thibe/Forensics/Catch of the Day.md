@@ -12,6 +12,7 @@ Category:
 Forensics
 
 Hints, info:
+Easy
 Our network admin was monitoring traffic on the corporate LAN when they spotted something unusual. It seems someone accessed a classified internal report they definitely shouldn't have.
 We managed to grab a packet capture before the connection ended. Can you take a look and figure out what was stolen?
 

