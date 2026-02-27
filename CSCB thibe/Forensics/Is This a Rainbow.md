@@ -64,7 +64,7 @@ def decrypt_raw():
 
 if __name__ == "__main__":
     decrypt_raw()
-´´´
+```
 
 4. Now cat the result from this script, and look at the first lines:
 
@@ -101,6 +101,6 @@ decoded_chars = [chr(b ^ k) for b in data]
 result = "".join(decoded_chars)
 
 print(f"Decoded Key/Flag: {result}")
-´´´
+```
 
 6. The output shows the key.
