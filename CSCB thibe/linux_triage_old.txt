@@ -1,0 +1,27 @@
+Pre-requisities:
+
+sudo apt install checksec
+
+
+
+I use the command below:
+
+TARGET="deja_brew"  #  Hier schrijf je u bestandsaam
+{
+  echo "--- 1. FILE TYPE & ARCHITECTURE ---"; 
+  file "$TARGET";
+  
+  echo -e "\n--- 2. SECURITY MITIGATIONS ---"; 
+  checksec --file="$TARGET";
+  
+  echo -e "\n--- 3. STRINGS TRIAGE (FLAG/URL/PATH) ---"; 
+  # strings "$TARGET" | grep -E -i "flag|ctf|http|/home/|/etc/";
+  strings "$TARGET"
+  
+  echo -e "\n--- 4. INTERESTING FUNCTIONS (User Defined) ---"; 
+  # This filters for code (T) but ignores common library junk like __libc
+  nm "$TARGET" | grep " T " | grep -v "__"; 
+  
+  echo -e "\n--- 5. SHA256 HASH (For OSINT/VT) ---"; 
+  sha256sum "$TARGET";
+} > triage_report.txt

@@ -93,15 +93,31 @@ i don't know if we can do a plaintext attack based on the output that we need to
 or if we do assume that the pre-fix is from the key itself
 also we know that there is some repetition going on, so we don't know when it starts and when it ends. we only know at some point in there it starts and at some point it ends but it may fully rotate i guess
 
-Method 1: The Fast Way (CyberChef)
-You can solve this in seconds without coding:
-    Open CyberChef.
-    Input your hex string.
-    Add the "From Hex" recipe.
-    Add the "XOR Brute Force" recipe (set key length to 1-10 or use "Index of Coincidence" to find the length).
-        Set the Key Length to 1. Usually, this won't show the whole flag, but it might show fragments.
-    The "Better" Way: Add "XOR".
-        Change the "Key" format to UTF-8.
-        Type CSC{ as the key.
-        Look at the first 4 bytes of the output. If the result looks like readable text (e.g., repe), those are the first 4 bytes of your Key.
-    Identify Key Length: Look for repeating patterns in the hex. If you see the same 4 or 8 hex bytes appearing every $N$ characters, $N$ is your key length.
+
+3]thibe
+: so it has to do something with XOR and plaintext attack i think
+[00:43]thibe
+: so basically
+[00:44]thibe
+: we know a prefix, which is CSC{
+[00:44]thibe
+: and a suffix, which is }
+[00:44]thibe
+: i found it easier to focus on the prefix only, but i didn't manage to solve it yet so i may be retarded
+[00:44]thibe
+: but anyways that's just what i assume
+[00:45]thibe
+: also
+[00:45]thibe
+: the data is very likely not in one right flow, but it repeats
+[00:46]thibe
+: and it may be that they cut off halfway through
+[00:48]thibe
+: and then continue from the beginning
+[00:48]thibe
+: also
+[00:48]thibe
+: repetitive string found:
+8d36b6c862b1dd27accc36b7c22c
+[00:49]thibe
+: i assume you have to use all of this knowledge (especially the prefix " CSC{ " ), and figure out a way to xor-decrypt it with this knowledge

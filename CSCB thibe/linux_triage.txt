@@ -1,0 +1,51 @@
+#!/bin/bash
+
+# Ensure a target is provided
+if [ -z "$1" ]; then
+    echo "Usage: ./triage.sh <filename>"
+    exit 1
+fi
+
+TARGET="$1"
+REPORT="triage_$(basename "$TARGET").txt"
+
+{
+  echo "=========================================================="
+  echo "TRIAGE REPORT FOR: $TARGET"
+  echo "DATE: $(date)"
+  echo "=========================================================="
+
+  echo -e "\n--- 1. FILE TYPE & ARCHITECTURE ---"
+  file "$TARGET"
+  
+  echo -e "\n--- 2. SECURITY MITIGATIONS (checksec) ---"
+  # Arch users: pacman -S checksec
+  checksec --file="$TARGET" --json | jq '.' 2>/dev/null || checksec --file="$TARGET"
+
+  echo -e "\n--- 3. SHA256 HASH (Search this on VirusTotal/Google) ---"
+  sha256sum "$TARGET"
+
+  echo -e "\n--- 4. DYNAMIC LINKING & DEPENDENCIES ---"
+  # Tells you which .so files it needs (libc, crypto, etc.)
+  ldd "$TARGET" 2>/dev/null || echo "Not a dynamic executable"
+
+  echo -e "\n--- 5. STRINGS: THE BIG PICTURE ---"
+  # Instead of just filtering for 'flag', look for length and common patterns
+  echo "[+] Strings longer than 10 characters (Top 20):"
+  strings "$TARGET" | awk 'length($0)>10' | head -n 20
+  echo -e "\n[+] Potential Flag/CTF hints:"
+  strings "$TARGET" | grep -Ei "flag|ctf|key|secret|win|success|fail|solve"
+
+  echo -e "\n--- 6. SYMBOL TABLE (Function Analysis) ---"
+  # nm is great, but let's look specifically for 'main' and 'sym.' prefixes
+  # We use 'T' for defined code and 'U' for undefined (imported library calls)
+  nm -D "$TARGET" 2>/dev/null || nm "$TARGET" | grep -E " [TU] " | grep -v "__"
+
+  echo -e "\n--- 7. ENTRY POINT & SECTIONS ---"
+  # Useful to see if there's a weird .data section or if it's packed
+  readelf -h "$TARGET" | grep "Entry point"
+  readelf -S "$TARGET" | grep -E ".text|.data|.bss|.rodata"
+
+} | tee "$REPORT"
+
+echo -e "\n[!] Triage complete. Report saved to: $REPORT"
