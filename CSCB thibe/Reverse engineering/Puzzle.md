@@ -75,7 +75,10 @@ Prerequisites:
 
 Java JDK 21+
 Ghidra (v11.x recommended)
-Python 3 with pip install mcp requests
+    https://github.com/NationalSecurityAgency/ghidra/releases
+GhidraMCP
+    https://github.com/LaurieWired/GhidraMCP/releases
+Python 3 + pip install mcp requests
 Claude Desktop (or another MCP-compatible client)
 
 Steps:
