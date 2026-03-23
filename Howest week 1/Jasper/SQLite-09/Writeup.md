@@ -23,4 +23,4 @@ airbnb.sqlite
 2. use `.header on` and `.mode column` to make it easier to read
 3. Thomas has an airbnb in "Muide - Meulestede - Afrikalaan" and has posted a review.
 4. So if we want to find Thomas his ID we have to find who meets both these requirements.
-5. We do this with the query `select * from reviews where reviewer_id in (select host_id from listings where neighbourhood = 'Muide - Meulestede - Afrikalaan');`
+5. We do this with the query `select reviewer_id from reviews where reviewer_id in (select host_id from listings where neighbourhood = 'Muide - Meulestede - Afrikalaan');`
