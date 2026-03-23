@@ -80,3 +80,11 @@ Result: ASCII 70 is 'F'
 but what happens after? idk
 
 keep trying new new things
+
+onthoud de tips:
+binarynt.exe
+exponential echo
+waar wijst binarynt naar?
+wat zo er exponential zijn? waar zit de echo?
+misschien betekent de echo dat je de eerste bytes kan xoren met de latere bytes?
+misschien exponential omdat je voor elk regeltje een gelijkaardige formule moet gebruiken met exponentieel increasende values?
