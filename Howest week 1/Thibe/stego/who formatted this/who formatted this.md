@@ -8,22 +8,19 @@ The San Francisco 49ers
 
 
 Challenge:
-Moon Message
-
+who formatted this
 
 Category:
-misc
+stego
 
 Hints, info:
-300 points
-NASA was going to send me some pictures of the moon, but all I got was this banger beat.
-(Don't attack the filesender! It's just to get the UFO.wav) https://filesender.belnet.be/?s=download&token=00173c87-ce2f-4e30-8de2-5b06ac4a2c37
+250
+No seriously who formatted this, I mean it works but why is it so ugly????
 
 
 Files:
-ufo.wav
-    -> letterlijk gewoon vreemde alien-achtige piepgeluiden
-
+who_formatted_this.py
+c_mc_face.c
 
 </pre>
 
