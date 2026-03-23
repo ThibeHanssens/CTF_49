@@ -32,9 +32,14 @@ binarynt.txt
 IEXN{,b#
 ]!:b l?P
 *2i>ee
-
-
-
+--------
+xxd binarynt.txt
+00000000: 4945 584e 7b2c 6223 0b5d 213a 6220 6c3f  IEXN{,b#.]!:b l?
+00000010: 500d 0a2a 3269 3e65 65                   P..*2i>ee
+--------
+from HxD
+"49 45 58 4E 7B 2C 62 23 0B 5D 21 3A 62 20 6C 3F 50 0D 0A 2A 32 69 3E 65 65"
+------------
 ### Solution
 
 notiteis:
@@ -88,3 +93,39 @@ waar wijst binarynt naar?
 wat zo er exponential zijn? waar zit de echo?
 misschien betekent de echo dat je de eerste bytes kan xoren met de latere bytes?
 misschien exponential omdat je voor elk regeltje een gelijkaardige formule moet gebruiken met exponentieel increasende values?
+
+
+
+
+HCTF-FLAG- confirmed with key[i-2] XOR key[i-3]! Position 10 gives F then breaks. But we're SO close.
+The recurrence key[i] = key[i-2] XOR key[i-3] gives HCTF-FLAG-F then non-printable. The suffix digits need keys that produce ASCII 0-9 (48-57).
+
+
+
+
+Start-Process cmd -ArgumentList '/c start "" /high python3 solve.py ^| tee results.txt'
+Start-Process cmd -ArgumentList '/c start "" /high python3 solve.py > results.txt'
+
+
+
+key[i-2] XOR key[i-3] : HCTF-FLAG-F[128] V]...
+
+key[i-3] XOR key[i-4] : HCTF-FLAG-Fn>1?:H2SJ...
+
+key[i-1] XOR key[i//2] : HCTF-FLAG-(n>x)\H>iJ...
+
+key[i-1] XOR key[i>>3] : HCTF-FLAG-Dn*xI\:>yJuq
+
+key[i-1] XOR key[i>>4] : HCTF-FLAG-En+xJ\4>sJoq
+
+key[i-3] XOR key[i>>1] : HCTF-FLAG-6r>Z-P&.uNEu
+
+Cycling period 10 : HCTF-FLAG-9\ ...
+
+
+
+key[i-2]^key[i-3] → F then breaks
+key[i-3]^key[i-4] → Fn>l?:H2SJ
+lag=2^(i%1) → Fn,xK\6>uJqq
+
+

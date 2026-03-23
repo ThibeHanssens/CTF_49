@@ -38,3 +38,4 @@ Open RX-SSTV, then simply play the WAV file through your speakers while RX-SSTV 
 
 
 ### Solution
+HCTF-FLAG-SP4C3R4C3
