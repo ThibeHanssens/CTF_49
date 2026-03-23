@@ -136,6 +136,18 @@ SO THE GOAL IS NOW FOR YOU TO MAKE IT FROM "HCTF" TO "HCTF-FLAG" BY USING THE HI
 
 IT WILL BE A DIFFERENT DECRYPTION METHOD THAT THE FIRST PART HAD, BUT IT IS RELATED AND MOSTLY DIFFERS BECAUSE OF THE EXPONENTIAL/ECHO HINTS WHICH TRANSFORM SOMETHING
 
+De manier hoe da die leerkracht zei "als je aan HCTF-FLAG zit moe je gewoon nog hetzelfde opnieuw doen met de exponentiele tip"
+HCTF is makkelijk om eruit te krijgen
+En dus op basis van wa de leerkracht zei, lijkt het dus da je van daaruit moe je de tips "exponentiele" en "echo" u decrypt verder moe uitwerken totda je "HCTF-FLAG" uitkomt
+En als je da op de juiste manier doet, dan is het gewoon nog neke hetzelfde herhalen met iets exponentieel om het einde te vinden
+Normaal heb ik er daarnet HCTF-FLAG eruit gekregen gewoon niet meer,  ma ikhad et lijk geforceerd en zijn eigen keys gebruikt om te laten matchen met de gekende prefix (HCTF-FLAG-)
+En als je dus die keys zogezegd forceert 
+Terwijl da je nie eens goe weet hoe da et ge-encrypt is
+Dan gaat ie altijd falen op het laatste stuk
+Omda je eigenlijk zowel de keys als de decryptie-methode op hetzelfde moment opbouwt met als doel om de gekende prefix te bereiken
+En da faalt dus meteen in het stuk na de prefix
+DUS: nie uzelf in de val zetten, en rekening houden met exponenitel en encho
+
 
 
 The real cipher bytes are:
@@ -359,3 +371,27 @@ THE TEACHERS SAID THAT IT'S IN DIFFERENT SECTIONS, FIRST YOU FIND THE "HCTF" PAR
 SO THE GOAL IS NOW FOR YOU TO MAKE IT FROM "HCTF" TO "HCTF-FLAG" BY USING THE HINTS FROM EXPONENTIAL/ECHOES
 
 IT WILL BE A DIFFERENT DECRYPTION METHOD THAT THE FIRST PART HAD, BUT IT IS RELATED AND MOSTLY DIFFERS BECAUSE OF THE EXPONENTIAL/ECHO HINTS WHICH TRANSFORM SOMETHING
+
+
+
+- you won't find anyting in recetn school CTF events. it's a private event, and very likely also made by the private organizers
+
+- segmenting based on blocks was just a guess, it's also very likely to be a false path and it might very much be that the seperators are part of the cipher
+
+
+
+but this is okay:
+
+1. Calculate the full plaintext of the first block by subtracting 2^i from each ciphertext byte modulo 256.
+
+2. Calculate the specific numeric keys required to decrypt the first six bytes of the second block into the string, it may be tempting to look a -FLAG - but keep in mind that it also may only cover until -FLA and that it then changes to another variant or something
+
+3. Analyze the mathematical relationship between the first block's bytes and the second block's calculated keys to deduce the true exponential echo mechanism
+
+4. Apply the discovered exponential echo transformation to the transition between the second and third blocks to derive their decryption keys.
+
+5. Decrypt the third block using these derived keys to extract the remaining suffix.
+
+6. Combine the decrypted segments to synthesize the final flag and verify the suffix consists strictly of alphanumeric characters.
+
+Keep in mind: it may also be multiple blocks, more than 3 (like it might by -FLAG-, but it also might be -FLA and then contineu with another echo-like thing)!!
