@@ -33,11 +33,5 @@ Context:
 
 ### Write-up:
 
-The audio is an SSTV (Slow Scan Television) transmission — a method used by amateur radio operators (and NASA) to send images over audio.
-
-https://qsl.net/on6mu/rxsstv.htm
-
-Open RX-SSTV, then simply play the WAV file through your speakers while RX-SSTV listens. It auto-detects the Martin M2 mode from the embedded VIS code and decodes the image in real time.
-
-
-### Solution
+check solve_bedtime.py
+output was side_view_big_png
