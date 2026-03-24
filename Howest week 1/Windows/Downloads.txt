@@ -1,0 +1,7 @@
+Val.zip:
+	folder met hanen
+db.zip
+vs_buildtools
+vs_redist
+web_server
+python manager
