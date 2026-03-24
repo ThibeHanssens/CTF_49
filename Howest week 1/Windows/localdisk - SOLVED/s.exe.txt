@@ -1,0 +1,11 @@
+run de file in cmd
+navigeer naar localhost
+vraagt user/pass
+smijt et gewoon in ghidra
+en je vind:
+howest_ctf_admin
+U3VwZXIhUzNjdXIzUGFzc3cwcmRkZGRk
+
+base64 decoden met
+echo "U3VwZXIhUzNjdXIzUGFzc3cwcmRkZGRk" | base64 -d
+-> inloggen en je hebt de flag
