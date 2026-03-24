@@ -8,21 +8,24 @@ The San Francisco 49ers
 
 
 Challenge:
-Moon Message
+Douwe's bedtime story
 
 
 Category:
 misc
 
 Hints, info:
-300 points
-NASA was going to send me some pictures of the moon, but all I got was this banger beat.
-(Don't attack the filesender! It's just to get the UFO.wav) https://filesender.belnet.be/?s=download&token=00173c87-ce2f-4e30-8de2-5b06ac4a2c37
-
+500
+Douwe is known for two things, his amazing arts & craft skills and reading a lot of documentation before falling asleep.
 
 Files:
-ufo.wav
-    -> letterlijk gewoon vreemde alien-achtige piepgeluiden
+FortiWeb_8.0.3_Administration_Guide.pdf
+    -> lange pdf met strepen
+
+Context:
+    tip van crafts/arts betekent dat je de pagina's moet plooien op basis van de lijnen
+    en dan als je naar de zijkant van de pagina's kijkt, dan tonen de zijkant van de pagina's de flag
+        (dus als je het fysiek zou afprinten en dan zou plooien op basis van de lijnen zou je op de zijkant van u bundel de oplossing zien)
 
 
 </pre>
