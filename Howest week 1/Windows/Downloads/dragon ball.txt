@@ -1,0 +1,218 @@
+I know it's somewhere in there
+
+findstr /m /i "HCTF-FLAG" *.pdf
+	-> niks
+Get-ChildItem *.pdf | Select-String "HCTF-FLAG"
+	-> niks
+Get-ChildItem *.pdf | Select-String "SENVLUZMQUct"
+	-> (base64 van HCTF-FLAG) -> niks
+
+
+
+
+PS C:\Users\Thibe\Desktop\Files\CTF_49\Howest week 1\Windows\Downloads\chapters> wsl
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$ ls
+'Dragon Ball Super Manga Chapter 100.pdf'  'Dragon Ball Super Manga Chapter 44.pdf'
+'Dragon Ball Super Manga Chapter 101.pdf'  'Dragon Ball Super Manga Chapter 45.pdf'
+'Dragon Ball Super Manga Chapter 102.pdf'  'Dragon Ball Super Manga Chapter 46.pdf'
+'Dragon Ball Super Manga Chapter 10.pdf'   'Dragon Ball Super Manga Chapter 47.pdf'
+'Dragon Ball Super Manga Chapter 11.pdf'   'Dragon Ball Super Manga Chapter 48.pdf'
+'Dragon Ball Super Manga Chapter 12.pdf'   'Dragon Ball Super Manga Chapter 4.pdf'
+'Dragon Ball Super Manga Chapter 13.pdf'   'Dragon Ball Super Manga Chapter 5.pdf'
+'Dragon Ball Super Manga Chapter 14.pdf'   'Dragon Ball Super Manga Chapter 6.pdf'
+'Dragon Ball Super Manga Chapter 15.pdf'   'Dragon Ball Super Manga Chapter 70.pdf'
+'Dragon Ball Super Manga Chapter 16.pdf'   'Dragon Ball Super Manga Chapter 71.pdf'
+'Dragon Ball Super Manga Chapter 17.pdf'   'Dragon Ball Super Manga Chapter 72.pdf'
+'Dragon Ball Super Manga Chapter 18.pdf'   'Dragon Ball Super Manga Chapter 73.pdf'
+'Dragon Ball Super Manga Chapter 19.pdf'   'Dragon Ball Super Manga Chapter 74.pdf'
+'Dragon Ball Super Manga Chapter 1.pdf'    'Dragon Ball Super Manga Chapter 75.pdf'
+'Dragon Ball Super Manga Chapter 20.pdf'   'Dragon Ball Super Manga Chapter 76.pdf'
+'Dragon Ball Super Manga Chapter 21.pdf'   'Dragon Ball Super Manga Chapter 77.pdf'
+'Dragon Ball Super Manga Chapter 22.pdf'   'Dragon Ball Super Manga Chapter 78.pdf'
+'Dragon Ball Super Manga Chapter 23.pdf'   'Dragon Ball Super Manga Chapter 79.pdf'
+'Dragon Ball Super Manga Chapter 24.pdf'   'Dragon Ball Super Manga Chapter 7.pdf'
+'Dragon Ball Super Manga Chapter 25.pdf'   'Dragon Ball Super Manga Chapter 80.pdf'
+'Dragon Ball Super Manga Chapter 26.pdf'   'Dragon Ball Super Manga Chapter 83.pdf'
+'Dragon Ball Super Manga Chapter 27.pdf'   'Dragon Ball Super Manga Chapter 84.pdf'
+'Dragon Ball Super Manga Chapter 28.pdf'   'Dragon Ball Super Manga Chapter 85.pdf'
+'Dragon Ball Super Manga Chapter 29.pdf'   'Dragon Ball Super Manga Chapter 86.pdf'
+'Dragon Ball Super Manga Chapter 2.pdf'    'Dragon Ball Super Manga Chapter 87.pdf'
+'Dragon Ball Super Manga Chapter 30.pdf'   'Dragon Ball Super Manga Chapter 88.pdf'
+'Dragon Ball Super Manga Chapter 31.pdf'   'Dragon Ball Super Manga Chapter 89.pdf'
+'Dragon Ball Super Manga Chapter 32.pdf'   'Dragon Ball Super Manga Chapter 8.pdf'
+'Dragon Ball Super Manga Chapter 33.pdf'   'Dragon Ball Super Manga Chapter 91.pdf'
+'Dragon Ball Super Manga Chapter 34.pdf'   'Dragon Ball Super Manga Chapter 92.pdf'
+'Dragon Ball Super Manga Chapter 35.pdf'   'Dragon Ball Super Manga Chapter 93.pdf'
+'Dragon Ball Super Manga Chapter 36.pdf'   'Dragon Ball Super Manga Chapter 94.pdf'
+'Dragon Ball Super Manga Chapter 37.pdf'   'Dragon Ball Super Manga Chapter 95.pdf'
+'Dragon Ball Super Manga Chapter 38.pdf'   'Dragon Ball Super Manga Chapter 96.pdf'
+'Dragon Ball Super Manga Chapter 39.pdf'   'Dragon Ball Super Manga Chapter 97.pdf'
+'Dragon Ball Super Manga Chapter 3.pdf'    'Dragon Ball Super Manga Chapter 98.pdf'
+'Dragon Ball Super Manga Chapter 40.pdf'   'Dragon Ball Super Manga Chapter 99.pdf'
+'Dragon Ball Super Manga Chapter 41.pdf'   'Dragon Ball Super Manga Chapter 9.pdf'
+'Dragon Ball Super Manga Chapter 42.pdf'   'Dragon Ball Super Manga.pdf'
+'Dragon Ball Super Manga Chapter 43.pdf'
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$ exiftool -a -u -g1 "Dragon Ball Super Manga.pdf"
+---- ExifTool ----
+ExifTool Version Number         : 13.25
+---- System ----
+File Name                       : Dragon Ball Super Manga.pdf
+Directory                       : .
+File Size                       : 8.7 MB
+File Modification Date/Time     : 2026:03:24 20:39:37+01:00
+File Access Date/Time           : 2026:03:24 21:31:10+01:00
+File Inode Change Date/Time     : 2026:03:24 21:31:09+01:00
+File Permissions                : -rwxrwxrwx
+---- File ----
+File Type                       : PDF
+File Type Extension             : pdf
+MIME Type                       : application/pdf
+---- PDF ----
+PDF Version                     : 1.7
+Linearized                      : No
+Page Count                      : 45
+Producer                        : iLovePDF
+Modify Date                     : 2022:03:20 09:59:48Z
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$
+
+
+
+
+for f in *.pdf; do 
+    echo "--------------------------------------------------"
+    echo "CHECKING: $f"
+    
+    # 1. Check Header/File type
+    file "$f"
+    
+    # 2. Metadata/Comments (Filtering for the flag)
+    exiftool -a -u "$f" | grep -i "HCTF"
+    
+    # 3. Strings search (The most likely winner)
+    strings "$f" | grep "HCTF"
+done
+
+
+
+CHECKING: Dragon Ball Super Manga Chapter 75.pdf
+Dragon Ball Super Manga Chapter 75.pdf: Zip archive data, at least v1.0 to extract, compression method=store
+--------------------------------------------------
+CHECKING: Dragon Ball Super Manga Chapter 76.pdf
+Dragon Ball Super Manga Chapter 76.pdf: Zip archive data, at least v1.0 to extract, compression method=store
+
+
+
+-> niks gevonden
+
+
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$ binwalk "Dragon Ball Super Manga.pdf"
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PDF document, version: "1.7"
+221           0xDD            Zlib compressed data, default compression
+167685        0x28F05         XAR archive, version: 15583, header size: 5438, TOC compressed: 17099440076360581965, TOC uncompressed: 8097940035100511764
+204650        0x31F6A         Zlib compressed data, default compression
+205046        0x320F6         Zlib compressed data, default compression
+446914        0x6D1C2         Zlib compressed data, default compression
+447311        0x6D34F         Zlib compressed data, default compression
+641835        0x9CB2B         Zlib compressed data, default compression
+642234        0x9CCBA         Zlib compressed data, default compression
+869190        0xD4346         Zlib compressed data, default compression
+869590        0xD44D6         Zlib compressed data, default compression
+1083402       0x10880A        Zlib compressed data, default compression
+1083802       0x10899A        Zlib compressed data, default compression
+1296473       0x13C859        Zlib compressed data, default compression
+1296873       0x13C9E9        Zlib compressed data, default compression
+1482141       0x169D9D        Zlib compressed data, default compression
+1482541       0x169F2D        Zlib compressed data, default compression
+1683720       0x19B108        Zlib compressed data, default compression
+1684120       0x19B298        Zlib compressed data, default compression
+1888102       0x1CCF66        Zlib compressed data, default compression
+1888502       0x1CD0F6        Zlib compressed data, default compression
+2092347       0x1FED3B        Zlib compressed data, default compression
+2092747       0x1FEECB        Zlib compressed data, default compression
+2266969       0x229759        Zlib compressed data, default compression
+2267369       0x2298E9        Zlib compressed data, default compression
+2441565       0x25415D        Zlib compressed data, default compression
+2441965       0x2542ED        Zlib compressed data, default compression
+2621719       0x280117        Zlib compressed data, default compression
+2622119       0x2802A7        Zlib compressed data, default compression
+2844472       0x2B6738        Zlib compressed data, default compression
+2844872       0x2B68C8        Zlib compressed data, default compression
+3006038       0x2DDE56        Zlib compressed data, default compression
+3006438       0x2DDFE6        Zlib compressed data, default compression
+3211209       0x30FFC9        Zlib compressed data, default compression
+3211609       0x310159        Zlib compressed data, default compression
+3420789       0x343275        Zlib compressed data, default compression
+3421189       0x343405        Zlib compressed data, default compression
+3677006       0x381B4E        Zlib compressed data, default compression
+3677406       0x381CDE        Zlib compressed data, default compression
+3857865       0x3ADDC9        Zlib compressed data, default compression
+3858265       0x3ADF59        Zlib compressed data, default compression
+4053907       0x3DDB93        Zlib compressed data, default compression
+4054307       0x3DDD23        Zlib compressed data, default compression
+4235079       0x409F47        Zlib compressed data, default compression
+4235684       0x40A1A4        Zlib compressed data, default compression
+4409672       0x434948        Zlib compressed data, default compression
+4410073       0x434AD9        Zlib compressed data, default compression
+4631750       0x46ACC6        Zlib compressed data, default compression
+4632151       0x46AE57        Zlib compressed data, default compression
+4816918       0x498016        Zlib compressed data, default compression
+4817319       0x4981A7        Zlib compressed data, default compression
+5000812       0x4C4E6C        Zlib compressed data, default compression
+5001213       0x4C4FFD        Zlib compressed data, default compression
+5173756       0x4EF1FC        Zlib compressed data, default compression
+5174157       0x4EF38D        Zlib compressed data, default compression
+5345358       0x51904E        Zlib compressed data, default compression
+5345759       0x5191DF        Zlib compressed data, default compression
+5570561       0x550001        Zlib compressed data, default compression
+5570962       0x550192        Zlib compressed data, default compression
+5737573       0x578C65        Zlib compressed data, default compression
+5737974       0x578DF6        Zlib compressed data, default compression
+5930953       0x5A7FC9        Zlib compressed data, default compression
+5931354       0x5A815A        Zlib compressed data, default compression
+6082279       0x5CCEE7        Zlib compressed data, default compression
+6082680       0x5CD078        Zlib compressed data, default compression
+6249026       0x5F5A42        Zlib compressed data, default compression
+6249429       0x5F5BD5        Zlib compressed data, default compression
+6399468       0x61A5EC        Zlib compressed data, default compression
+6399873       0x61A781        Zlib compressed data, default compression
+6590650       0x6490BA        Zlib compressed data, default compression
+6591055       0x64924F        Zlib compressed data, default compression
+6746251       0x66F08B        Zlib compressed data, default compression
+6746656       0x66F220        Zlib compressed data, default compression
+6902782       0x6953FE        Zlib compressed data, default compression
+6903187       0x695593        Zlib compressed data, default compression
+7061166       0x6BBEAE        Zlib compressed data, default compression
+7061571       0x6BC043        Zlib compressed data, default compression
+7189830       0x6DB546        Zlib compressed data, default compression
+7190234       0x6DB6DA        Zlib compressed data, default compression
+7352145       0x702F51        Zlib compressed data, default compression
+7352550       0x7030E6        Zlib compressed data, default compression
+7585324       0x73BE2C        Zlib compressed data, default compression
+7585729       0x73BFC1        Zlib compressed data, default compression
+7827472       0x777010        Zlib compressed data, default compression
+7827878       0x7771A6        Zlib compressed data, default compression
+8073201       0x7B2FF1        Zlib compressed data, default compression
+8073607       0x7B3187        Zlib compressed data, default compression
+8311429       0x7ED285        Zlib compressed data, default compression
+8311835       0x7ED41B        Zlib compressed data, default compression
+8528829       0x8223BD        Zlib compressed data, default compression
+8529235       0x822553        Zlib compressed data, default compression
+8737336       0x855238        Zlib compressed data, default compression
+8738260       0x8555D4        Zlib compressed data, default compression
+
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$
+
+
+dd if="Dragon Ball Super Manga.pdf" bs=1 skip=167685 count=36965 of=hidden_data.bin
+
+
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$ file hidden_data.bin
+hidden_data.bin: xar archive, header size 5438 version 15583, compressed TOC: 17099440076360581965, unknown 0xb1c207 checksum
+thibe@DESKTOP-HO00B3T:/mnt/c/Users/Thibe/Desktop/Files/CTF_49/Howest week 1/Windows/Downloads/chapters$
+
+
+
+

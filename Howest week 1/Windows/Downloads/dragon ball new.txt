@@ -1,0 +1,36 @@
+OKAY SO APPEARNTLY THERE WAS ANOTHER FOLDER AND IN THERE THERE WAS MORE STUFF
+
+flag 4
+
+"C:\Users\flagfinder\Desktop\ \Homework\japanese reading material\Dragon Ball Super Manga Chapter 74.pdf"
+-> latest modified
+
+hint:
+Date: August 2021
+
+Shan DUDE OMG DID YOU SEE IT?
+
+Unknown: Yeah, that was unexpected. Vegeta gets a new form who saw that 
+one coming?
+
+Shan: That Granolah fight was good tough, he dropped some bars throughout that 
+fight so I was expecting something. Seems like the training with Beerus worked out.
+
+Unknown: Seems like it! He has destruction energy so maybe he became a god? Wonder what
+its power is. Or even what it's called
+
+Shan: Instinct of destruction maybe? Dont know, well have to see next month. I'm just happy
+my boy finally gets something. I love that transformation panel!
+
+
+
+
+file ./'Dragon Ball Super Manga Chapter 74.pdf'
+./Dragon Ball Super Manga Chapter 74.pdf: PDF document, version 1.4
+
+ exiftool -a -u -g1 'Dragon Ball Super Manga Chapter 74.pdf'
+
+
+binwalk 'Dragon Ball Super Manga Chapter 74.pdf'
+
+
