@@ -8,27 +8,28 @@ The San Francisco 49ers
 
 
 Challenge:
-Moon Message
-
+I am who I am
 
 Category:
 misc
 
 Hints, info:
-300 points
-NASA was going to send me some pictures of the moon, but all I got was this banger beat.
-(Don't attack the filesender! It's just to get the UFO.wav) https://filesender.belnet.be/?s=download&token=00173c87-ce2f-4e30-8de2-5b06ac4a2c37
+250 points
 
 
 Files:
-ufo.wav
-    -> letterlijk gewoon vreemde alien-achtige piepgeluiden
+me.exe
 
 
 </pre>
 
 
 ### Write-up:
+
+It's a programming challenge in rust, so the usual solution methodology, is:
+1. Analyse in GhidraMCP
+2. Write a rust script that does the same thing as the exe, but with hardcoded values
+
 
 initial reverse engineering showed:
 A Windows x64 Rust binary that reads your MAC address, checks it against a hardcoded value, and if it matches, decrypts and prints the flag using `xor_cryptor`.
@@ -109,3 +110,10 @@ cargo run
 - Rust binaries embed full source paths — immediately reveals third-party crates used
 - The MAC check and the decryption key are the same value, both hardcoded in `.rdata`
 - No need to run the binary at all — everything needed (ciphertext + key + algorithm) is statically present in the binary
+
+
+## Note to self
+
+It's a programming challenge in rust, so the usual solution methodology, is:
+1. Analyse in GhidraMCP
+2. Write a rust script that does the same thing as the exe, but with hardcoded values
