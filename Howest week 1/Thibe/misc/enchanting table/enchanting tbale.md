@@ -8,39 +8,36 @@ The San Francisco 49ers
 
 
 Challenge:
-I Have No Mouth, and I Must Scream
+Enchanting table
 
 Category:
-Cryptography
+Misc
 
 
 Hints, info:
-100 points
-I've been reading xkcd commics all week!
+350
+34 6f 32 52 34 5a 4f 31 34 6f 53 34 49 4d 79 6a 49 4f 4b 4f 6b 2b 4b 4f 6b 2b 71 57 6a 75 47 55 6b 65 4b 4b 6f 2b 4b 61 6a 65 4f 44 71 73 71 57 34 6f 69 33 34 5a 4b 33 34 5a 53 52 36 70 61 4d 34 70 57 4f 34 34 4f 71 34 6f 71 6a 4d 77 3d 3d
 
 
-Files:
-xkcd
 
-Problem description:
 
 </pre>
 
 
 ### Write-up:
 
-1. First looked at the file, it's literally just an empty file with this in it:
-    A̰A̧ĀA̮-A̮ĂAA̋-ẢĂåàáȂáaa̲ảâa̋Āa̰áãá
+Enchanting table = minecraft
 
-2. This challenge is based on xkcd #3054, titled Scream Cipher
-    https://xkcd.com/3054/
-    -> https://www.dcode.fr/scream-cipher-xkcd
+it's ASCII -> hex decond
+then you see it's base64
+and then hex decoding gives you enchanting table language
 
-3. So go to that link
-    decrypt
+just this:
+https://cyberchef.io/#recipe=From_Hex('Space')From_Base64('A-Za-z0-9%2B/%3D',true)&input=MzQgNmYgMzIgNTIgMzQgNWEgNGYgMzEgMzQgNmYgNTMgMzQgNDkgNGQgNzkgNmEgNDkgNGYgNGIgNGYgNmIgMmIgNGIgNGYgNmIgMmIgNzEgNTcgNmEgNzUgNDcgNTUgNmIgNjUgNGIgNGIgNmYgMmIgNGIgNjEgNmEgNjUgNGYgNDQgNzEgNzMgNzEgNTcgMzQgNmYgNjkgMzMgMzQgNWEgNGIgMzMgMzQgNWEgNTMgNTIgMzYgNzAgNjEgNGQgMzQgNzAgNTcgNGYgMzQgMzQgNGYgNzEgMzQgNmYgNzEgNmEgNGQgNzcgM2QgM2Q
 
-### Solution
-first it showed HCTF-FLAG-ILoveReaa̲ingThese, using that link
-    but appearntly "a̲", turns into a "d"
-but this made more sense i guess:
-    HCTF-FLAG-ILoveReadingThese
+and then enchanting table decoding:
+https://www.dcode.fr/standard-galactic-alphabet
+
+
+
+### Note to self: DO IT MANUALLY NO AI
