@@ -34,7 +34,7 @@ Context:
 ### Write-up:
 Opening the binary in Ghidra reveals the main logic in the entry function. The program:
 
-Builds the flag at runtime using snprintf("HCTF-FLAG-%012lu", 0xaef3279187) into a 20-byte buffer, producing HCTF-FLAG-751403766 (truncated due to buffer size)
+Builds the flag at runtime using snprintf("HCTF-FLAG-%012lu", 0xaef3279187) into a 20-byte buffer, producing HCTF-FLAG-xxxxxxxxx (truncated due to buffer size)
 Sets a string to "Check" (5 characters) and then checks two conditions before printing the flag:
 
 if (length == 7) — "Check" is only 5 chars, so this always fails
