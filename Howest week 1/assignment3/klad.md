@@ -1,0 +1,6 @@
+In July 2014, the Tor Project issued a security advisory for a "relay early traffic confirmation" attack, disclosing the discovery of a group of relays attempting to de-anonymize onion service users and operators.[86] A set of onion service directory nodes (i.e., the Tor relays responsible for providing information about onion services) were found to be modifying traffic of requests. The modifications made it so the requesting client's guard relay, if controlled by the same adversary as the onion service directory node, could easily confirm that the traffic was from the same request. This would allow the adversary to simultaneously know the onion service involved in the request, and the IP address of the client requesting it (where the requesting client could be a visitor or owner of the onion service).[86]
+
+
+The attacking nodes joined the network on 30 January, using a Sybil attack to comprise 6.4% of guard relay capacity, and were removed on 4 July.[86] In addition to removing the attacking relays, the Tor application was patched to prevent the specific traffic modifications that made the attack possible.
+
+https://blog.torproject.org/tor-security-advisory-relay-early-traffic-confirmation-attack

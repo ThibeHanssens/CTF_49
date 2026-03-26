@@ -55,7 +55,8 @@ Reading `0x14001e380` from the binary gives: `AA:BB:CC:DD:EE:FF`
 
 **IF YOU RUN A WINDOWS-SIMULATED ENVIRONMENT ON A LINUX OS, IT'S EASIER BECAUSE YOU CAN SPOOF YOUR OWN MAC ADDRESS**
 **ON WINDOWS-BASED OS YOU HAVE TO WRITE YOUR OWN RUST CODE**
-
+1. op windows suckt et om te spoofen, maar op een linux vm (WINE  om .exe te runnen) kan je et spoofen
+2. rust script waar je de mac ingeeft als hardcoded value
 
 
 Just below the check, the encrypted flag is loaded:
@@ -113,6 +114,7 @@ cargo run
 
 
 ## Note to self
+WINE
 
 It's a programming challenge in rust, so the usual solution methodology, is:
 1. Analyse in GhidraMCP

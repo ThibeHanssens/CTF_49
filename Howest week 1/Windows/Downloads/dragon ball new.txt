@@ -34,3 +34,4 @@ file ./'Dragon Ball Super Manga Chapter 74.pdf'
 binwalk 'Dragon Ball Super Manga Chapter 74.pdf'
 
 
+strings './Dragon Ball Super Manga Chapter 74.pdf' | grep -i "HCTF-FLAG-"
