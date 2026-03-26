@@ -56,9 +56,9 @@ There were 2 files attached:
 - An image
 - A data file
 
-The hint was that when you reach that dir you should xort it out. I think i need to xor the data file to get the actual file.
+The hint was that when you reach that dir you should xort it out. I need to xor the data file to get the actual datafile.
 
-When checking out the image provided in the attachement it is a grid with letters on it. This links directly to the research paper where "the path to the treasure" is this is the same grid. When following that path on the attached image you get the word "GREATSPHINX" when xor'ing the file with that as the key in UTF-8 you get the correct file.
+When checking out the image provided in the attachement it is a grid with letters on it. This links directly to the research paper where "the path to the treasure" is the same grid. When following that path on the attached image you get the word "GREATSPHINX" when xor'ing the data file with that as the key in UTF-8 you get the correct file.
 
-chmoding the file so it is an executable and running it it returns the ctf flag
+chmoding the file so it is an executable and running it returns the ctf flag
 
