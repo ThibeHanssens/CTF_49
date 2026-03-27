@@ -21,6 +21,7 @@
 ### Hint 3
 `TXkgZmF2b3JpdGUgY29tbWFuZHMgYXJlIHN0ZWdoaWRlIGFuZCBleGlmdG9vbA==`
 
+<div style="page-break-after: always;"></div>
 
 ## Write-up
 
@@ -47,6 +48,8 @@
 * **Steganography:** To hide this keylist, I used `steghide` to embed the text file inside an extra image (a Warhammer "dataslate," fitting the challenge's theme).
 * **The passphrase:** The passphrase required to extract the keylist via steghide is `OBJ-PRIME`. As a clue, this exact phrase is visually integrated into the design of the dataslate image itself.
 
+<div style="page-break-after: always;"></div>
+
 ## Solution Walkthrough: The Kakophoni
 
 **Summary:** Players are given three image files. They must use steganography, metadata analysis, multi-layered decryption, and audio manipulation to extract the hidden flag.
@@ -60,7 +63,7 @@
 
 ### Step 2: Finding the converter (metadata & decoding)
 1.  **EXIF-data:** Checking the metadata of the images using `exiftool` (as nudged by hint 2/3) reveals a strange string hidden in the comments section.
-2.  **Decoding the breadcrumb:** The string is heavily encoded. Players must process the data through a multi-stage decoding chain to reveal the final destination
+2.  **Decoding the breadcrumb:** The string is heavily encoded. Players must process the data through a multi-stage decoding chain to reveal the final destination.
     * Decode from **Base64** -> yields a Hex string.
     * Decode from **Hex** -> yields a ROT13 string.
     * Decode from **ROT13** -> reveals a URL: `https://p2r3.github.io/convert/`
